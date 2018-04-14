@@ -6,7 +6,7 @@ Created by Stephen Andrews, April 11th, 2018
 
 import sqlite3
 
-from flask import Flask, request
+from flask import Flask, render_template, request
 
 import config
 import db
@@ -14,6 +14,10 @@ import db
 
 app = Flask(__name__)
 # conn = sqlite3.connect(config.DB_NAME)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route("/<room_id>/<time>")
 def hello(room_id, time):
