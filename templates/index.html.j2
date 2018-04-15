@@ -20,6 +20,13 @@
   <body>
 
     <div class="container">
+
+      <div class="col-md-12">
+        {% for item in data %}
+          <li>Room: {{ item[0] }}</li>
+        {% endfor %}
+      </div>
+
       <div class="col-md-12">
         <svg width="1200" height="800" style="background: orange">
           <!-- John's Room -->
@@ -59,6 +66,7 @@
         </svg>
       </div>
     </div>
+
 
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

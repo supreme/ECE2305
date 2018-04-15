@@ -17,7 +17,23 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    """Main page for viewing room layout."""
+
+    query = """
+            SELECT *
+            FROM monitor
+            """
+
+    with sqlite3.connect(config.DB_NAME) as conn:
+        try:
+            cur = conn.cursor()
+            response = cur.execute(query)
+
+            return render_template('index.html.j2', data=response)
+        except sqlite3.Error as err:
+            print(err)
+
+    return render_template('index.html.j2', data=None)
 
 @app.route("/<room_id>/<time>")
 def hello(room_id, time):
