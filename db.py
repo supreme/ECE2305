@@ -17,7 +17,8 @@ def setup():
             CREATE TABLE monitor (
                 id integer primary key,
                 room_id integer,
-                breach_time timestamp
+                breach_time timestamp,
+                message text
             );
             """
 

@@ -6,7 +6,8 @@ if __name__ == '__main__':
 
     data = {
         'room_id': 1,
-        'breach_time': datetime.now()
+        'breach_time': datetime.now(),
+        'message': 'entered'
     }
 
     response = requests.post('http://127.0.0.1:8080/api/', data=data)

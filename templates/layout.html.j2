@@ -1,0 +1,61 @@
+<svg width="100%" height="800">
+  {% set y_pos = 5 %}
+  {% set x_pos = 300 %}
+
+  {% set entered = 'fill:rgba(255, 0, 0, 1.0)' %}
+  {% set ok = 'fill:rgba(0, 255, 0, 1.0)' %}
+
+  <!-- John's Room -->
+  <rect width="300" height="200" x="{{ x_pos }}" y="{{ y_pos }}" style="fill:rgba(255,255,255, 1.0); stroke-width:5;stroke:rgb(0,0,0)" />
+  <text x="{{ x_pos + 85 }}" y="{{ y_pos + 120 }}" fill="black" font-size="24">Bedroom</text>
+
+  <!-- Hallway -->
+  {% if hallway > 0 %}
+    <rect width="75" height="300" x="{{ x_pos + 25 }}" y="{{ y_pos + 200 }}" style="{{ entered }};stroke-width:5;stroke:rgb(0,0,0)" />
+  {% else %}
+    <rect width="75" height="300" x="{{ x_pos + 25 }}" y="{{ y_pos + 200 }}" style="{{ ok }};stroke-width:5;stroke:rgb(0,0,0)" />
+  {% endif %}
+  <text x="{{ x_pos + 100 }}" y="{{ y_pos + 200 }}" fill="black" font-size="24" transform="rotate(90, {{ x_pos + 10 }}, {{ x_pos - 50 }})">Hallway</text>
+
+  <!-- Bathroom -->
+  <rect width="200" height="100" x="{{ x_pos + 100 }}" y="{{ y_pos + 200 }}" style="fill:rgba(255,255,255, 1.0);stroke-width:5;stroke:rgb(0,0,0)"></rect>
+  <text x="{{ x_pos + 140 }}" y="{{ y_pos + 260 }}" fill="black" font-size="24">Bathroom</text>
+
+  <!-- Entry way -->
+  {% if entryway > 0 %}
+    <rect width="200" height="100" x="{{ x_pos - 175 }}" y="{{ y_pos + 265 }}" style="{{ entered }};stroke-width:5;stroke:rgb(0,0,0)"></rect>
+  {% else %}
+    <rect width="200" height="100" x="{{ x_pos - 175 }}" y="{{ y_pos + 265 }}" style="{{ ok }};stroke-width:5;stroke:rgb(0,0,0)"></rect>
+  {% endif %}
+  <text x="{{ x_pos - 140 }}" y="{{ y_pos + 325 }}" fill="black" font-size="24">Entryway</text>
+
+  <!-- Common Area -->
+  <rect width="200" height="150" x="{{ x_pos + 100 }}" y="{{ y_pos + 300 }}" style="fill:rgba(255,255,255, 1.0);stroke-width:5;stroke:rgb(0,0,0)"></rect>
+  <text x="{{ x_pos + 130 }}" y="{{ y_pos + 380 }}" fill="black" font-size="24">Living Room</text>
+
+  <!-- Kitchen -->
+  {% if kitchen > 0 %}
+    <rect width="300" height="200" x="{{ x_pos }}" y="{{ y_pos + 500 }}" style="{{ entered }};stroke-width:5;stroke:rgb(0,0,0)" />
+  {% else %}
+    <rect width="300" height="200" x="{{ x_pos }}" y="{{ y_pos + 500 }}" style="{{ ok }};stroke-width:5;stroke:rgb(0,0,0)" />
+  {% endif %}
+  <text x="{{ x_pos + 100 }}" y="{{ y_pos + 610 }}" fill="black" font-size="24">Kitchen</text>
+
+  <!-- John's door -->
+  <rect width="35" height="7" x="{{ x_pos + 45 }}" y="{{ y_pos + 197 }}" style="fill:rgb(255,255,255);"></rect>
+
+  <!-- Bathroom door -->
+  <rect width="7" height="35" x="{{ x_pos + 96 }}" y="{{ y_pos + 235 }}" style="fill:rgb(255,255,255);"></rect>
+
+  <!-- Common area door -->
+  <rect width="7" height="145" x="{{ x_pos + 96 }}" y="{{ y_pos + 303 }}" style="fill:rgb(255,255,255);"></rect>
+
+  <!-- Entry door -->
+  <rect width="7" height="35" x="{{ x_pos + 22 }}" y="{{ y_pos + 303 }}" style="fill:rgb(255,255,255);"></rect>
+
+  <!-- Kitchen door -->
+  <rect width="35" height="7" x="{{ x_pos + 45 }}" y="{{ y_pos + 497 }}" style="fill:rgb(255,255,255);"></rect>
+
+  <!-- Entryway door -->
+  <rect width="35" height="7" x="{{ x_pos - 115 }}" y="{{ y_pos + 261 }}" style="fill:rgb(255,255,255);"></rect>
+</svg>
